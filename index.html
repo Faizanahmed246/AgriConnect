@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="png" href="images/icon/favicon.png">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Comaptible" content="IE=edge">
+	<title>AGRICONNECT</title>
+	<meta name="desciption" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script>
+		$(window).on('scroll', function(){
+  			if($(window).scrollTop()){
+  			  $('nav').addClass('black');
+ 			 }else {
+ 		   $('nav').removeClass('black');
+ 		 }
+		})
+	</script>
+</head>
+<body>
+<!-- Navigation Bar -->
+	<header id="header">
+		<nav>
+			<div class="logo"><img src="images\extra\logooo.jpg" alt="logo"></div>
+			<!-- navigation bar -->
+			<ul>
+				<li><a class="active" href="">Home</a></li>
+				<li><a href="#insights_section">Insights</a></li>
+				<li><a href="#connect_section">Connect</a></li>
+				<li><a href="#services_section">Services</a></li>
+				<li><a href="#contactus_section">Contacts</a></li>
+			</ul>
+			<div class="srch"><input type="text" class="search" placeholder="Search here..."><img src="images\icon\search.png" alt="search" onclick=slide()></div>
+			<a class="get-started" href="login.html">Get Started</a>
+			<img src="images/icon/menu.png" class="menu" onclick="sideMenu(0)" alt="menu">
+		</nav>
+		<div class="head-container">
+			<div class="quote">
+				<p>AT AGRICONNECT OUR MISSION IS TO EMPOWER FARMERS.... </p>
+				<h5>AgriConnect was inspired by the desire to create a comprehensive platform that addreses the diverse agricultural needs of farmers....</h5>
+				<div class="play">
+					<img src="images/icon/play.png" alt="play"><span><a href="" target="_blank">STARTUP GUIDE</a></span>
+				</div>
+			</div>
+			<div class="svg-image">
+				<img src="images\extra\far3.png" alt="svg">
+			</div>
+		</div>
+		<div class="side-menu" id="side-menu">
+			<div class="close" onclick="sideMenu(1)"><img src="images/icon/close.png" alt=""></div>
+			<div class="user">
+				<img src="images/creator/roshan.jpeg" alt="Username">
+				<p>AiCADEMY</p>
+			</div>
+			<ul>
+				<li><a href="#about_section">About</a></li>
+				<li><a href="#insights_section">Insights</a></li>
+				<li><a href="#connect_section">Connect</a></li>
+				<li><a href="#services_section">Services</a></li>
+				<li><a href="#contactus_section">Contact</a></li>
+				<li><a href="#feedBACK">Feedback</a></li>
+			</ul>
+		</div>
+	</header>
+
+
+<!-- Some Popular Subjects -->
+	<div class="title">
+		<span>WHAT WE OFFER</span>
+	</div>
+	<br><br>
+	<div class="course">
+		<center><div class="cbox">
+		<div class="det"><a href="https://agri-connect.vercel.app/product"><img src="images/courses/book.png">TRENDING</a></div>
+		<div class="det"><a href="crop.html"><img src="images/courses/d1.png">CROP</a></div>
+		<div class="det"><a href="aiassistant12.html"><img src="images/courses/paper.png">AI ASSISTANT</a></div>
+		<div class="det"><a href="pcr.html"><img src="images/courses/d1.png">PCR</a></div>
+		</div></center>
+		<div class="cbox">
+		<div class="det"><a href="sms.html"><img src="images/courses/computer.png">MESSAGING</a></div>
+		<div class="det"><a href=""><img src="images/courses/data.png">MARKET</a></div>
+		<div class="det"><a href=""><img src="images/courses/algo.png">PROFILE</a></div>
+		
+		</div>
+	</div>
+
+	
+<!-- ABOUT -->
+	<div class="diffSection" id="about_section">
+		<center><p style="font-size: 50px; padding: 100px">About</p></center>
+		<div class="about-content">
+				<div class="side-image">
+					<img class="sideImage" src="images\extra\farmers.jpg">
+				</div>
+				<div class="side-text">
+					<h2> About us ?</h2>
+					<p>Agri Connect is a transformative initiative designed to bridge the gap between farmers, markets, and agricultural stakeholders<br> Agricultural website can include websites that have games, videos or topic related resources that act as tools to enhance learning and supplement classroom teaching. These websites help make the process of learning entertaining and attractive to the student, especially in today's age. <br>Using HTML(HyperText Markup Language), CSS(Cascading Style Sheet), JavaScript, we can make learning more easier and in a interesting way.</p>
+				</div>
+		</div>
+	</div>
+
+
+<!-- INSIGHTS -->
+	<div class="diffSection" id="insights_section">
+		<center><p style="font-size: 50px; padding: 100px; padding-bottom: 40px;">Insights</p></center>
+		<div class="content">
+			<p></p>
+		</div>
+	</div>
+	<div class="extra">
+		<p>We're increasing this data every year</p>
+		<div class="smbox">
+		<span><center><div class="data">154</div><div class="det">TOTAL USERS</div></center></span>
+		<span><center><div class="data">62</div><div class="det">ACTIVE USERS</div></center></span>
+		<span><center><div class="data">1K</div><div class="det">GLOBAL REACH</div></center></span>
+		<span><center><div class="data">8</div><div class="det">PRODUCTS LISTED</div></center></span>
+		</div>
+	</div>
+
+
+<!-- CONNECT -->
+	<div class="diffSection" id="connect_section">
+		<center><p style="font-size: 50px; padding-top: 100px; padding-bottom: 60px;">CONNECT WITH OTHERS</p></center>
+		<div class="totalcard">
+			<div class="card">
+				<center><img src="images\creator\FARMER1.jpg"></center>
+				<center><div class="card-title">RAVI KISHAN</div>
+				<div id="detail">
+					<p>HARYANA <br>ROTHAK</p>
+					<div class="duty"></div>
+					<a href="" target="_blank"><button class="FAIZAN AHMED">Connect</button></a>
+				</div>
+				</center>
+			</div>
+			<div class="card">
+				<center><img src="images\creator\FARMER2.jpg"></center>
+				<center><div class="card-title">GANSHAM SINGH</div>
+				<div id="detail">
+					<p>PUNJAB<br>CHANDIGARH</p>
+					<div class="duty"></div>
+					<a href="" target="_blank"><button class="ARSALAN ANSARI">Connect</button></a>
+				</div>
+				</center>
+			</div>
+			<div class="card">
+				<center><img src="images\creator\FARMER3.jpg"></center>
+				<center><div class="card-title">RAJU </div>
+				<div id="detail">
+					<p>TELENGANA<br>MEDAK</p>
+					<div class="duty"></div>
+					<a href="" target="_blank"><button class="ABDUL QADIR">Connect</button></a>
+				</div>
+				</center>
+			</div>
+			<div class="card">
+				<center><img src="images\creator\FARMER4.jpg"></center>
+				<center><div class="card-title">VINOD</div>
+				<div id="detail">
+					<p>BIHAR<br>PATNA</p>
+					<div class="duty"></div>
+					<a href="" target="_blank"><button class="ABDUL HABEEB">Connect</button></a>
+				</div>
+				</center>
+			</div>
+		</div>
+	</div>
+
+
+<!-- SERVICES -->
+	<div class="service-swipe">
+		<div class="diffSection" id="services_section">
+		<center><p style="font-size: 50px; padding: 100px; padding-bottom: 40px; color: #fff;">Services</p></center>
+		</div>
+		
+		<a href=""><div class="s-card"><img src="images/icon/computer-courses.png"><p>CUSTOMIZED SUPPORT</p></div></a>
+		<a href=""><div class="s-card"><img src="images/icon/brainbooster.png"><p>MULTILINGUAL SUPPORT</p></div></a>
+		<a href="#"><div class="s-card"><img src="images/icon/online-tutorials.png"><p>CROP GROWING TUTORIALS</p></div></a>
+		<a href=""><div class="s-card"><img src="images/icon/papers.jpg"><p>AI CHAT BOT</p></div></a>
+		<a href="#"><div class="s-card"><img src="images/icon/help.png"><p>24X7 CONNECT</p></div></a>
+		<a href=""><div class="s-card"><img src="images/icon/discussion.png"><p>Discussion WITH OTHER FARMERS</p></div></a>
+		<a href=""><div class="s-card"><img src="images/icon/q1.png"><p>PERSONALISED CROP RECOMMENDATION</p></div></a>
+		<a href=""><div class="s-card"><img src="images/icon/p3.png"><p>MARKET PLACE</p></div></a>
+	</div>
+
+<!-- Reviews by Students -->
+<div id="makeitfull">
+	<a href="#review_section"><img src="images/icon/makeitfull.png"></a>
+</div>
+<div class="review">
+	<div class="diffSection" id="review_section">
+		<center><p style="font-size: 40px; padding: 100px; padding-bottom: 40px; color: #2E3D49;">What the Other Farmers Say About Us?</p></center>
+	</div>
+	<div class="rev-container">
+		<div class="rev-card">
+			<div class="identity">
+				<img src="images\creator\FARMER1.jpg"><p>RAVI</p>
+				<h6>HARYANA</h6>
+				<div class="rating"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"></div>
+			</div>
+			<div class="rev-cont">
+				<p id="title">Review:</p>
+				<p id="content">
+					Best Platforms for farmers and good support when needed.I HAD GREAT EXPERIENCE USING THIS PLATFORM AND NEVER HAD ANY ISSUES REGARDING ANYTHING
+				</p>
+			</div>
+		</div>
+		<div class="rev-card">
+			<div class="identity">
+				<img src="images\creator\FARMER2.jpg"><p>GANSHAM SINGH</p>
+				<h6>PUNJAB</h6>
+				<div class="rating"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"></div>
+			</div>
+			<div class="rev-cont">
+				<p id="title">Review:</p>
+				<p id="content">
+					Best Platforms for farmers and good support when needed.I HAD GREAT EXPERIENCE USING THIS PLATFORM AND NEVER HAD ANY ISSUES REGARDING ANYTHING
+				</p>
+			</div>
+		</div>
+		<div class="rev-card">
+			<div class="identity">
+				<img src="images\creator\FARMER3.jpg"><p>RAJU</p>
+				<h6>TELENGANA</h6>
+				<div class="rating"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"></div>
+			</div>
+			<div class="rev-cont">
+				<p id="title">Review:</p>
+				<p id="content">
+					Best Platforms for farmers and good support when needed.I HAD GREAT EXPERIENCE USING THIS PLATFORM AND NEVER HAD ANY ISSUES REGARDING ANYTHING  
+				</p>
+			</div>
+		</div>
+		<div class="rev-card">
+			<div class="identity">
+				<img src="images\creator\FARMER4.jpg"><p>VINOD</p>
+				<h6>BIHAR</h6>
+				<div class="rating"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png"></div>
+			</div>
+			<div class="rev-cont">
+				<p id="title">Review:</p>
+				<p id="content">
+					Best Platforms for farmers and good support when needed.I HAD GREAT EXPERIENCE USING THIS PLATFORM AND NEVER HAD ANY ISSUES REGARDING ANYTHING
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- CONTACT US -->
+	<div class="diffSection" id="contactus_section">
+		<center><p style="font-size: 50px; padding: 100px">Contact Us</p></center>
+		<div class="csec"></div>
+		<div class="back-contact">
+			<div class="cc">
+			<form action="mdfaizanahmed56@gmail.com" method="post" enctype="text/plain">
+				<label>First Name <span class="imp">*</span></label><label style="margin-left: 185px">Last Name <span class="imp">*</span></label><br>
+				<center>
+				<input type="text" name="" style="margin-right: 10px; width: 175px" required="required"><input type="text" name="lname" style="width: 175px" required="required"><br>
+				</center>
+				<label>Email <span class="imp">*</span></label><br>
+				<input type="email" name="mail" style="width: 100%" required="required"><br>
+				<label>Message <span class="imp">*</span></label><br>
+				<input type="text" name="message" style="width: 100%" required="required"><br>
+				<label>Additional Details</label><br>
+				<textarea name="addtional"></textarea><br>
+				<button type="submit" id="csubmit">Send Message</button>
+			</form>
+			</div>
+		</div>
+	</div>
+
+
+<!-- FEEDBACK -->
+	<div class="title2" id="feedBACK">
+		<span>Give Feedback</span>
+		<div class="shortdesc2">
+			<p>Please share your valuable feedback to us.</p>
+		</div>
+	</div>
+
+	<div class="feedbox">
+		<div class="feed">
+			<form action="mailto:19bec060@smvdu.ac.in" method="post" enctype="text/plain">
+				<label>Your Name</label><br>
+				<input type="text" name="" class="fname" required="required"><br>
+				<label>Email</label><br>
+				<input type="email" name="mail" required="required"><br>
+				<label>Additional Details</label><br>
+				<textarea name="addtional"></textarea><br>
+				<button type="submit" id="csubmit">Send Message</button>
+			</form>
+		</div>
+	</div>
+
+<!-- Sliding Information -->
+	<marquee style="background: linear-gradient(to right, #FA4B37, #DF2771); margin-top: 50px;" direction="left" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="20"><div class="marqu">“WHERE FARMERS,TECHNOLOGY AND SUSTAINABILITY CONVERGE - AGRICONNECT”</div></marquee>
+
+<!-- FOOTER -->
+	<footer>
+		<div class="footer-container">
+			<div class="left-col">
+				<img src="images\extra\SCMEDIALOGO.png" style="width: 150px;">
+				<div class="logo"></div>
+				<div class="social-media">
+					<a href="#"><img src="images/icon\fb.png"></a>
+					<a href="#"><img src="images/icon\insta.png"></a>
+					<a href="#"><img src="images/icon\tt.png"></a>
+					<a href="#"><img src="images/icon\ytube.png"></a>
+					<a href="#"><img src="images/icon\linkedin.png"></a>
+				</div><br><br>
+				<p class="rights-text">Copyright © 2025 Created By FAIZAN AHMED, ARSALAN ANSARI, ABDUL QADIR  All Rights Reserved.</p>
+				<br><p><img src="images/icon/location.png"><br></p><br>
+				<p><img src="images/icon/phone.png"> +91 9553832405<br><img src="images/icon/mail.png">&nbsp; AGRICONNECT2025@gmail.com</p>
+			</div>
+			<div class="right-col">
+				<!-- notification-->
+				<h1 style="color: #fff">Our Newsletter</h1>
+				<div class="border"></div><br>
+				<p>Enter Your Email to get our News and updates.</p>
+				<form class="newsletter-form">
+					<input class="txtb" type="email" placeholder="Enter Your Email">
+					<input class="btn" type="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>

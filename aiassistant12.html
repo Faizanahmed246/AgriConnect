@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect - Your Agricultural AI Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #2ecc71;
+            --secondary-green: #27ae60;
+            --background-light: #f0f4f0;
+            --text-dark: #2c3e50;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--background-light) 0%, #e9f5e9 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--text-dark);
+            padding: 15px;
+        }
+        .chat-container {
+            width: 100%;
+            max-width: 380px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            max-height: 90vh;
+        }
+        .chat-header {
+            background: linear-gradient(to right, var(--primary-green), var(--secondary-green));
+            color: white;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .chat-header h1 {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .chat-header .logo {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .chat-messages {
+            flex-grow: 1;
+            padding: 15px;
+            max-height: 450px;
+            overflow-y: auto;
+            background: #f9faf9;
+        }
+        .message {
+            margin-bottom: 15px;
+            max-width: 85%;
+            clear: both;
+        }
+        .bot-message {
+            float: left;
+            background: #e6f3e6;
+            border-radius: 15px 15px 15px 0;
+            padding: 10px 15px;
+            color: var(--text-dark);
+        }
+        .user-message {
+            float: right;
+            background: var(--primary-green);
+            color: white;
+            border-radius: 15px 15px 0 15px;
+            padding: 10px 15px;
+        }
+        .input-area {
+            display: flex;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #eaeaea;
+        }
+        .input-area input {
+            flex-grow: 1;
+            border: 1px solid #d1e8d1;
+            border-radius: 20px;
+            padding: 10px 15px;
+            margin-right: 10px;
+            outline: none;
+            transition: border-color 0.3s;
+            width: calc(100% - 60px);
+        }
+        .input-area input:focus {
+            border-color: var(--primary-green);
+        }
+        .send-btn {
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .send-btn:hover {
+            background: var(--secondary-green);
+        }
+        @media screen and (max-width: 480px) {
+            .chat-container {
+                max-width: 100%;
+                height: 100vh;
+                max-height: 100vh;
+                border-radius: 0;
+            }
+            .chat-messages {
+                max-height: none;
+                flex-grow: 1;
+            }
+            .input-area {
+                flex-wrap: wrap;
+            }
+            .input-area input {
+                width: 100%;
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+            .send-btn {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="logo">🌱</div>
+            <h1>AgriConnect AI</h1>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message">
+                <div class="bot-message">
+                    Hi! I'm your agricultural AI assistant. Ask me anything about farming, crops, or agriculture!
+                </div>
+            </div>
+        </div>
+        <div class="input-area">
+            <input type="text" placeholder="Type your agricultural question..." id="messageInput">
+            <button class="send-btn" id="sendButton">➤</button>
+        </div>
+    </div>
+
+    <script>
+        // Get DOM elements
+        const chatMessages = document.getElementById('chatMessages');
+        const messageInput = document.getElementById('messageInput');
+        const sendButton = document.getElementById('sendButton');
+
+        // Predefined responses for demonstration
+        const botResponses = [
+            "Crop rotation helps maintain soil health and prevent nutrient depletion.",
+            "Organic farming reduces chemical usage and improves long-term soil quality.",
+            "Proper irrigation is crucial for maximizing crop yield and water conservation.",
+            "Different crops require different soil pH levels for optimal growth.",
+            "Integrated pest management can reduce reliance on chemical pesticides."
+        ];
+
+        // Function to add a message to the chat
+        function addMessage(message, isUser = false) {
+            const messageEl = document.createElement('div');
+            messageEl.classList.add('message');
+            
+            const messageContentEl = document.createElement('div');
+            messageContentEl.classList.add(isUser ? 'user-message' : 'bot-message');
+            messageContentEl.textContent = message;
+            
+            messageEl.appendChild(messageContentEl);
+            chatMessages.appendChild(messageEl);
+            
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Function to handle sending a message
+        function sendMessage() {
+            const userMessage = messageInput.value.trim();
+            
+            if (userMessage === '') return;
+
+            // Add user message
+            addMessage(userMessage, true);
+
+            // Clear input
+            messageInput.value = '';
+
+            // Simulate bot response
+            setTimeout(() => {
+                const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
+                addMessage(randomResponse);
+            }, 500);
+        }
+
+        // Event listeners
+        sendButton.addEventListener('click', sendMessage);
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+</body>
+</html>

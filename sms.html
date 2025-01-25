@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect - Farmer Messaging</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 300px;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+        }
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .conversation-list {
+            list-style: none;
+        }
+        .conversation-item {
+            padding: 15px;
+            border-bottom: 1px solid #34495e;
+            cursor: pointer;
+        }
+        .conversation-item:hover {
+            background-color: #34495e;
+        }
+        .conversation-item.active {
+            background-color: #3498db;
+        }
+        .chat-area {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+        }
+        .chat-header {
+            background-color: #ecf0f1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .messages {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .message {
+            margin-bottom: 15px;
+            max-width: 70%;
+        }
+        .sent {
+            align-self: flex-end;
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            margin-left: auto;
+        }
+        .received {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .message-input {
+            display: flex;
+            padding: 15px;
+            background-color: #f8f9fa;
+        }
+        .message-input input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .message-input button {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>AgriConnect</h2>
+            <button>+</button>
+        </div>
+        <ul class="conversation-list">
+            <li class="conversation-item active">
+                <strong>John's Farm</strong>
+                <p>Last message about crops...</p>
+            </li>
+            <li class="conversation-item">
+                <strong>Green Valley Cooperative</strong>
+                <p>Equipment discussion...</p>
+            </li>
+            <li class="conversation-item">
+                <strong>Local Agricultural Board</strong>
+                <p>Market prices update...</p>
+            </li>
+        </ul>
+    </div>
+    <div class="chat-area">
+        <div class="chat-header">
+            <h3>John's Farm</h3>
+        </div>
+        <div class="messages">
+            <div class="message received">
+                Hey, how's the harvest looking this season?
+            </div>
+            <div class="message sent">
+                Corn yield is looking promising this year!
+            </div>
+            <div class="message received">
+                Great to hear! Need any help with irrigation?
+            </div>
+        </div>
+        <div class="message-input">
+            <input type="text" placeholder="Type your message...">
+            <button>Send</button>
+        </div>
+    </div>
+</body>
+</html>

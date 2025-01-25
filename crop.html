@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect</title>
+    <link rel="stylesheet" href="body.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AgriConnect</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#crops">Crops</a></li>
+                <li><a href="#market">Market</a></li>
+                <li><a href="#profile">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>Welcome to AgriConnect</h1>
+            <div class="dashboard">
+                <div class="crop-info">
+                    <h2>Your Crops</h2>
+                    <div id="cropList"></div>
+                </div>
+                <div class="market-trends">
+                    <h2>Market Trends</h2>
+                    <div id="marketTrends"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="crops" class="hidden">
+            <h2>Crop Management</h2>
+            <div class="crop-form">
+                <input type="text" id="cropName" placeholder="Crop Name">
+                <input type="number" id="cropArea" placeholder="Area (acres)">
+                <input type="date" id="plantingDate">
+                <button onclick="addCrop()">Add Crop</button>
+            </div>
+            <div id="cropManagement"></div>
+        </section>
+
+        <section id="market" class="hidden">
+            <h2>Market Prices</h2>
+            <div id="marketPrices"></div>
+        </section>
+
+        <section id="profile" class="hidden">
+            <h2>Farmer Profile</h2>
+            <form id="profileForm">
+                <input type="text" id="farmerName" placeholder="Full Name">
+                <input type="text" id="farmLocation" placeholder="Farm Location">
+                <input type="tel" id="contactNumber" placeholder="Contact Number">
+                <button type="submit">Save Profile</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script2.js"></script>
+</body>
+</html>

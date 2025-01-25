@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriCrop Recommender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: #2ecc71;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #27ae60;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AGRICONNECT CROP Recommender</h1>
+        <div class="form-group">
+            <label>Soil Type</label>
+            <select id="soilType">
+                <option value="clay">Clay</option>
+                <option value="sandy">Sandy</option>
+                <option value="loam">Loam</option>
+                <option value="silt">Silt</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>pH Level</label>
+            <input type="number" id="phLevel" min="4" max="9" step="0.1" placeholder="Enter pH level (4-9)">
+        </div>
+        <div class="form-group">
+            <label>Annual Rainfall (mm)</label>
+            <input type="number" id="rainfall" placeholder="Enter annual rainfall">
+        </div>
+        <div class="form-group">
+            <label>Temperature (°C)</label>
+            <input type="number" id="temperature" placeholder="Average annual temperature">
+        </div>
+        <button onclick="recommendCrop()">Recommend Crop</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const cropDatabase = {
+            recommendations: [
+                {
+                    crops: ['Rice', 'Jute'],
+                    conditions: {
+                        soilType: ['clay', 'loam'],
+                        phMin: 6.0,
+                        phMax: 7.5,
+                        rainfallMin: 1000,
+                        rainfallMax: 2000,
+                        tempMin: 20,
+                        tempMax: 35
+                    }
+                },
+                {
+                    crops: ['Wheat', 'Barley'],
+                    conditions: {
+                        soilType: ['loam', 'sandy'],
+                        phMin: 6.0,
+                        phMax: 7.5,
+                        rainfallMin: 300,
+                        rainfallMax: 900,
+                        tempMin: 10,
+                        tempMax: 25
+                    }
+                },
+                {
+                    crops: ['Cotton', 'Groundnut'],
+                    conditions: {
+                        soilType: ['sandy', 'loam'],
+                        phMin: 5.5,
+                        phMax: 7.0,
+                        rainfallMin: 500,
+                        rainfallMax: 1200,
+                        tempMin: 20,
+                        tempMax: 35
+                    }
+                },
+                {
+                    crops: ['Sugarcane', 'Maize'],
+                    conditions: {
+                        soilType: ['loam', 'clay'],
+                        phMin: 6.5,
+                        phMax: 7.5,
+                        rainfallMin: 750,
+                        rainfallMax: 1500,
+                        tempMin: 20,
+                        tempMax: 32
+                    }
+                }
+            ]
+        };
+
+        function recommendCrop() {
+            const soilType = document.getElementById('soilType').value;
+            const phLevel = parseFloat(document.getElementById('phLevel').value);
+            const rainfall = parseFloat(document.getElementById('rainfall').value);
+            const temperature = parseFloat(document.getElementById('temperature').value);
+            const resultDiv = document.getElementById('result');
+
+            let recommendedCrops = [];
+
+            cropDatabase.recommendations.forEach(recommendation => {
+                const conditions = recommendation.conditions;
+                
+                if (
+                    conditions.soilType.includes(soilType) &&
+                    phLevel >= conditions.phMin && phLevel <= conditions.phMax &&
+                    rainfall >= conditions.rainfallMin && rainfall <= conditions.rainfallMax &&
+                    temperature >= conditions.tempMin && temperature <= conditions.tempMax
+                ) {
+                    recommendedCrops = recommendedCrops.concat(recommendation.crops);
+                }
+            });
+
+            if (recommendedCrops.length > 0) {
+                resultDiv.innerHTML = `
+                    <strong>Recommended Crops:</strong><br>
+                    ${recommendedCrops.join(', ')}
+                `;
+            } else {
+                resultDiv.innerHTML = 'No suitable crops found for these land conditions.';
+            }
+        }
+    </script>
+</body>
+</html>

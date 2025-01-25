@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+}
+
+.crop-info, .market-trends {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 45%;
+}
+
+.crop-form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.crop-form input {
+    flex-grow: 1;
+    padding: 0.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+section {
+    background-color: white;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
